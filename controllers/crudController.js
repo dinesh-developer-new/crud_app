@@ -3,7 +3,10 @@ export const crudIndex = (req, res) => {
 };
 
 export const crudCreate = (req, res) => {
-  res.send("Create a list");
+  console.log(req.body);
+
+  return res.json(req.body)
+  
 };
 
 export const crudUpdate = (req, res) => {
