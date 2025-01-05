@@ -1,25 +1,18 @@
 import express from 'express'
+import { crudCreate, crudDelete, crudIndex, crudUpdate } from '../controllers/crudController.js';
 
 const router = express.Router()
 
 // C - For creating
-router.post("/", (req, res) => {
-    res.send("Create a list")
-});
+router.post("/", crudCreate);
 
 // R - For reading
-router.get("/", (req, res) => {
-    res.send("Read a list")
-});
+router.get("/", crudIndex);
 
 // U - For updating
-router.put("/:id", (req, res) => {
-    res.send("Update a list")
-});
+router.put("/:id", crudUpdate);
 
 // D - For deleting
-router.delete("/:id", (req, res) => {
-    res.send("Delete a list")
-});
+router.delete("/:id", crudDelete);
 
 export default router;
